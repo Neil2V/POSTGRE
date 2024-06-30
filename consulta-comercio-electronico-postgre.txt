@@ -1,0 +1,40 @@
+CREATE database comercioelectronico;
+
+CREATE TABLE cliente (
+    idCliente SERIAL PRIMARY KEY,
+    fchRegistro TIMESTAMP,   
+    nombre VARCHAR(100),   
+    apellido VARCHAR(100),     
+    telefono VARCHAR(20),       
+    dni VARCHAR(20)               
+);
+
+CREATE TABLE producto (
+    idProducto SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    precio NUMERIC(10, 2),
+    descripcion TEXT,
+    categoria VARCHAR(50),
+    stock INTEGER
+);
+
+
+SELECT * FROM cliente;
+
+SELECT * FROM producto;
+
+
+INSERT INTO cliente (fchRegistro, nombre, apellido, telefono, dni)
+VALUES ('2024-06-30', 'Juan', 'Pérez', '555-1234', '12345678A');
+
+INSERT INTO cliente (fchRegistro, nombre, apellido, telefono, dni)
+VALUES ('2024-06-30', 'María', 'García', '555-5678', '98765432B');
+
+INSERT INTO producto (nombre, precio, descripcion, categoria, stock, codigo) VALUES
+('Laptop', 1200.50, 'Laptop de alta gama con 16GB de RAM y 512GB SSD.', 'Electrónica', 50, '100');
+
+INSERT INTO producto (nombre, precio, descripcion, categoria, stock, codigo) VALUES
+('Smartphone', 750.99, 'Smartphone con cámara de 108MP y 256GB de almacenamiento.', 'Electrónica', 100, '101');
+
+
+
